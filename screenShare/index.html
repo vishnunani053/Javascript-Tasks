@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="startButton">Share Screen</button>
+    <div id="videoContainer"></div>
+    <script>
+        document.getElementById("startButton").addEventListener("click", async () => {
+            try {
+                const stream = await navigator.mediaDevices.getDisplayMedia({ video: true });
+                const videoElement = document.createElement("video");
+                videoElement.srcObject = stream;
+                videoElement.autoplay = true;
+                videoElement.id = "videoElement";
+                document.getElementById("videoContainer").appendChild(videoElement);
+            } catch (err) {
+                console.error("Error accessing user media:", err);
+            }
+        });
+    </script>
+</body>
+</html>
