@@ -71,8 +71,8 @@ const mappedArray = array.map((num) => [num, num * 2]); // [[1, 2], [2, 4], [3, 
 console.log(mappedArray);
 
 // Using flatMap
-const flatMappedArray = array.flatMap((num) => [num, num * 2]); // [1, 2, 2, 4, 3, 6]
-console.log(flatMappedArray);
+const flatMappedArray = filterbyName.flatMap((num) => [num, num * 2]); // [1, 2, 2, 4, 3, 6]
+console.log("test....",flatMappedArray);
 
 // const filteredArr = array.filter((data) => data.age >36);
 // console.log(filteredArr);
